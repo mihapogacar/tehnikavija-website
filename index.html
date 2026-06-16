@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehnikavija – Specialty Coffee</title>
+    <meta name="description" content="Freshly roasted specialty coffee by Tehnikavija. Browse our current varieties and place your order.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+    <!-- Analytics: GoatCounter (privacy-friendly, no cookies, free) -->
+    <!-- Replace YOURSITE with your GoatCounter site name after setup -->
+    <script data-goatcounter="https://YOURSITE.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+    <!-- ── HERO ──────────────────────────────────────────────── -->
+    <header class="hero">
+        <div class="container">
+            <h1>
+                <img src="assets/tehnikavija.svg" alt="Tehnikavija" class="logo">
+            </h1>
+            <p class="tagline">Specialty coffee, roasted with precision.</p>
+            <a href="#order" class="btn-hero">Order Now</a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ── INTRO ─────────────────────────────────────────── -->
+        <section class="intro container">
+            <p>
+                At Tehnikavija we source exceptional green coffee and roast it in small batches
+                to bring out its full potential. Each variety is chosen for its origin story,
+                traceability, and flavour clarity. We roast to order — so what arrives with
+                you is always fresh.
+            </p>
+        </section>
+
+        <!-- ── PRODUCTS ──────────────────────────────────────── -->
+        <section class="products">
+            <div class="container">
+                <h2>Current Offering</h2>
+                <p class="section-note">Prices per 250 g bag. All roasted fresh to order.</p>
+
+                <div class="product-grid">
+
+                    <div class="product-card">
+                        <div class="product-header">
+                            <span class="product-origin">Ethiopia</span>
+                            <span class="roast roast--light">Light</span>
+                        </div>
+                        <h3 class="product-name">Yirgacheffe</h3>
+                        <p class="product-notes">Jasmine · Bergamot · Stone fruit</p>
+                        <p class="product-price">12 €</p>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-header">
+                            <span class="product-origin">Colombia</span>
+                            <span class="roast roast--medium">Medium</span>
+                        </div>
+                        <h3 class="product-name">Huila</h3>
+                        <p class="product-notes">Caramel · Red apple · Chocolate</p>
+                        <p class="product-price">11 €</p>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-header">
+                            <span class="product-origin">Guatemala</span>
+                            <span class="roast roast--dark">Dark</span>
+                        </div>
+                        <h3 class="product-name">Antigua</h3>
+                        <p class="product-notes">Dark chocolate · Walnut · Brown sugar</p>
+                        <p class="product-price">10 €</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── ORDER FORM ─────────────────────────────────────── -->
+        <section class="order" id="order">
+            <div class="container">
+                <h2>Place Your Order</h2>
+                <p class="section-note">Fill in the form and we'll confirm your order by email within 24 hours.</p>
+
+                <form
+                    id="order-form"
+                    action="https://api.web3forms.com/submit"
+                    method="POST"
+                >
+                    <!-- Web3Forms access key — get yours free at web3forms.com -->
+                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                    <input type="hidden" name="subject" value="New Tehnikavija Order">
+                    <input type="hidden" name="from_name" value="Tehnikavija Website">
+                    <!-- Honeypot spam protection -->
+                    <input type="checkbox" name="botcheck" style="display:none">
+
+                    <div class="field">
+                        <label for="name">Your Name <span aria-hidden="true">*</span></label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            autocomplete="name"
+                            required
+                            placeholder="Jane Doe"
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                            placeholder="jane@example.com"
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="product">Coffee Variety <span aria-hidden="true">*</span></label>
+                        <select id="product" name="product" required>
+                            <option value="" disabled selected>Choose a variety…</option>
+                            <option value="Ethiopia Yirgacheffe (Light, 250g) — 12 €">Ethiopia Yirgacheffe – Light · 12 €</option>
+                            <option value="Colombia Huila (Medium, 250g) — 11 €">Colombia Huila – Medium · 11 €</option>
+                            <option value="Guatemala Antigua (Dark, 250g) — 10 €">Guatemala Antigua – Dark · 10 €</option>
+                        </select>
+                    </div>
+
+                    <div class="field field--narrow">
+                        <label for="quantity">Quantity (bags) <span aria-hidden="true">*</span></label>
+                        <input
+                            type="number"
+                            id="quantity"
+                            name="quantity"
+                            min="1"
+                            max="20"
+                            value="1"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="message">Notes <span class="optional">(optional)</span></label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="3"
+                            placeholder="Grind preference, delivery notes, questions…"
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-order">Send Order</button>
+
+                    <p class="form-note">
+                        By submitting you agree that we may contact you about this order.
+                        No payment is collected here — we'll invoice you on confirmation.
+                    </p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ── FOOTER ─────────────────────────────────────────────── -->
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <a href="mailto:miha.pog@gmail.com">miha.pog@gmail.com</a>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="Facebook">Facebook</a>
+            </div>
+            <p class="copyright">&copy; 2026 Tehnikavija. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
