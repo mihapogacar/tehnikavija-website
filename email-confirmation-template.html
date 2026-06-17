@@ -82,10 +82,36 @@
                    style="max-width:100%; display:block; margin:0 auto; border-radius:6px; border:1px solid #e8e0d8;"
                    aria-label="World map with coffee origin markers">
 
+                <defs>
+                  <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                    <polygon points="0 0, 8 3, 0 6" fill="#6b4226" opacity="0.75"/>
+                  </marker>
+                </defs>
+
                 <!-- Base raster map -->
                 <image xlink:href="https://mihapogacar.github.io/tehnikavija-website/assets/world-map.png"
                        href="https://mihapogacar.github.io/tehnikavija-website/assets/world-map.png"
                        x="0" y="0" width="1500" height="740"/>
+
+                <!-- ── Arrows from origin countries to Slovenia (46°N 14.5°E → x=764 y=208) ── -->
+                <!-- Guatemala → Slovenia: arc over the Atlantic -->
+                <path d="M348,318 Q530,155 752,213"
+                      fill="none" stroke="#6b4226" stroke-width="2" stroke-dasharray="10,7"
+                      opacity="0.65" marker-end="url(#arrowhead)"/>
+                <!-- Colombia → Slovenia: arc over the Atlantic -->
+                <path d="M398,358 Q565,170 752,213"
+                      fill="none" stroke="#6b4226" stroke-width="2" stroke-dasharray="10,7"
+                      opacity="0.65" marker-end="url(#arrowhead)"/>
+                <!-- Ethiopia → Slovenia: short arc westward -->
+                <path d="M855,341 Q820,258 776,215"
+                      fill="none" stroke="#6b4226" stroke-width="2" stroke-dasharray="10,7"
+                      opacity="0.65" marker-end="url(#arrowhead)"/>
+
+                <!-- ── Slovenia: 46°N 14.5°E ── -->
+                <circle cx="764" cy="208" r="12" fill="none" stroke="#6b4226" stroke-width="2.5" opacity="0.7"/>
+                <circle cx="764" cy="208" r="6"  fill="#6b4226"/>
+                <rect x="776" y="191" width="92" height="24" rx="4" fill="white" opacity="0.85"/>
+                <text x="781" y="207" font-size="20" font-family="Georgia,serif" font-weight="bold" fill="#2c2420">Slovenia</text>
 
                 <!-- ── Ethiopia Yirgacheffe: 9°N 38.7°E ── -->
                 <circle cx="862" cy="346" r="14" fill="none" stroke="#a0714f" stroke-width="3" opacity="0.7"/>
