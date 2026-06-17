@@ -1,6 +1,9 @@
 # Python virtual environment
 .venv/
 
+# Secrets – never commit
+.env
+
 # Pytest cache
 .pytest_cache/
 __pycache__/
@@ -12,3 +15,4 @@ playwright-browsers/
 # OS
 .DS_Store
 Thumbs.db
+
